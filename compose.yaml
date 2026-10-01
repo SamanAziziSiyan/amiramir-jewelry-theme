@@ -1,0 +1,28 @@
+# Optional local development stack. Create .env from .env.example with unique local passwords.
+services:
+  db:
+    image: mariadb:11.4
+    environment:
+      MARIADB_DATABASE: wordpress
+      MARIADB_USER: theme
+      MARIADB_PASSWORD: ${WP_DB_PASSWORD:?set a unique local password}
+      MARIADB_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:?set a unique local root password}
+    volumes:
+      - db_data:/var/lib/mysql
+  wordpress:
+    image: wordpress:php8.2-apache
+    depends_on:
+      - db
+    ports:
+      - "127.0.0.1:${WP_PORT:-8085}:80"
+    environment:
+      WORDPRESS_DB_HOST: db
+      WORDPRESS_DB_NAME: wordpress
+      WORDPRESS_DB_USER: theme
+      WORDPRESS_DB_PASSWORD: ${WP_DB_PASSWORD:?set a unique local password}
+    volumes:
+      - wp_data:/var/www/html
+      - ./:/var/www/html/wp-content/themes/jewelery:ro
+volumes:
+  db_data:
+  wp_data:

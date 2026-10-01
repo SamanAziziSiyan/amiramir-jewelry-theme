@@ -1,0 +1,22 @@
+{
+    "name": "sam/base-template",
+    "autoload": {
+        "psr-4": {
+            "Sam\\jeweleryTemplate\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "SamanAzizi",
+            "email": "samanazizi1394@gmail.com"
+        }
+    ],
+    "config": {
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
+        }
+    },
+    "require-dev": {
+        "wp-coding-standards/wpcs": "^3.0"
+    }
+}

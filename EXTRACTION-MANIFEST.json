@@ -1,0 +1,11 @@
+{
+  "source_scope": "theme directory only",
+  "included_file_count": 113,
+  "excluded_by_reason": {
+    "stale metadata/generated translation": 8,
+    "client media or font: rights not established": 149,
+    "nested metadata/dependency": 3733,
+    "Fancybox distribution rights not established": 2
+  },
+  "modified_source_files_for_placeholders": 21
+}

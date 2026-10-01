@@ -1,0 +1,9 @@
+{
+  "scripts": {
+    "build:css": "tailwindcss -i ./tailwind.css -o ./style.css",
+    "check:js": "node --check assets/js/app.js && node --check assets/js/admin.js"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.3.5"
+  }
+}
